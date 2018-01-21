@@ -24,6 +24,7 @@ def graphImage(img):
     hist = plt.hist(gray.ravel(), bins=8, range=(0.0, 1.0))
     return np.array(hist[0]).tolist()
 
+
 def graphVideo(input_file = "cubeA.mov", tempdir = "tempdir"):
 
     if not os.path.exists(tempdir):
@@ -31,8 +32,8 @@ def graphVideo(input_file = "cubeA.mov", tempdir = "tempdir"):
 
     cap = cv2.VideoCapture(input_file)
 
-    width = int(cap.get(3))   # float
-    height = int(cap.get(4))  # float
+    width = int(cap.get(3))
+    height = int(cap.get(4))
     fps = cap.get(5)
     frames = cap.get(7)
     print(width, height, fps)
