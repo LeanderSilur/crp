@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import matplotlib.colors as mcol
 import os
 import cv2
-import json
 
 
 # print the specs of a cv2 capture object
@@ -17,7 +17,8 @@ def GrabSpecs(cv_cap):
 # write a two dimensional array to a file with line breaks
 def WriteData(data, filename):
     fd = open(filename, "w")
-    fd.write(json.dumps(data, indent=4, separators=(',', ': ')))
+    for d in data:
+        fd.write(str(d) + ",\n")
     fd.close()
 
 
@@ -30,14 +31,13 @@ def RGBtoLuminance(rgb):
 
 
 # returns a histogram list from a numpy image
-def graphImage(img, steps = 8):
-    gray = RGBtoLuminance(img)
-    hist = plt.hist(gray.ravel(), bins=steps, range=(0.0, 1.0))
+def graphGrayImage(img, steps = 8, prange = (0.0, 1.0)):
+    hist = plt.hist(img.ravel(), bins=steps, range=prange)
     return np.array(hist[0]).tolist()
 
 
 # saves histogram data to a file
-def graphVideo(input_file = "cubeA.mov", tempdir = "tempdir", framestep = 2):
+def graphVideo(input_file = "cubeA.mov", tempdir = "tempdir"):
 
     # Temporarily saving the files in a subdirectory and
     # reading them back in, changes the output.
@@ -47,43 +47,35 @@ def graphVideo(input_file = "cubeA.mov", tempdir = "tempdir", framestep = 2):
 
     cap = cv2.VideoCapture(input_file)
 
-    print("plotting", input_file)
-
     i = 0
-
     histograms_cv = []
-    histograms_matplot = []
-    fs = 0
     while(cap.isOpened()):
         ret, frame_cv = cap.read()
 
-        # Abort the process, once the frames have all been
-        # read and "ret" is no longer true.
         if ret != True:
             cap.release()
             #cv2.destroyAllWindows()
             break
-
-        if (fs%framestep == 0):
-            # p:    temporary path for saving the current frame
-            p = os.path.join(tempdir, str(i)+".png")
-            cv2.imwrite(p, frame_cv)
-
-            # read the frame back in using the matplotlib.image lib
-            frame_matplot = mpimg.imread(p)
-
-            # "frame" and "read_frame" don't produce the same results.
-            # Do we need a conversion?
-            #histograms_cv.append(graphImage(frame_cv))
-            histograms_matplot.append(graphImage(frame_matplot, 16))
-            
-            i += 1
-            print("adding frame", fs)
-        fs += 1
-
+        frame_cv_lum = cv2.cvtColor(frame_cv, cv2.COLOR_RGB2GRAY)
+        #frame_cv_rgb = cv2.cvtColor(frame_cv, cv2.COLOR_BGR2RGB)
+        #frame_cv_norm = cv2.normalize(frame_cv_rgb, None, alpha=0, beta=1,
+        #    norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F)
+        #hist = plt.hist(frame_cv_lum.ravel(), bins=8, range=(0,255))
+        #opencv2 is 40x faster
+        hist = cv2.calcHist([frame_cv_lum],[0],None,[256],[0,256])
+        histograms_cv.append(hist)
+        
+        print("reading", i)
+        i += 1
+    plt.xlim([0,256])
+    for idx, h in enumerate(histograms_cv):
+        if (idx%20 == 0):
+            print("plotting", idx)
+            c = mcol.hsv_to_rgb((idx/len(histograms_cv) * 0.8, 1, 1))
+            plt.plot(h, color = c, linewidth=0.4)
+    plt.show()
     # save both lists to files
-    #WriteData(histograms_cv, "data_opencv2.txt")
-    WriteData(histograms_matplot, "data_matplotlib.txt")
+    WriteData(histograms_cv, "data_opencv2.txt")
 
 
-graphVideo("jp.mov", "tempdir", 4)
+graphVideo("jp.mov", "tempdir")

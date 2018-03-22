@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 
-img = mpimg.imread('stinkbug.png')
+img = mpimg.imread('img_stinkbug.png')
 lum_img = img[:, :, 0]
 
 # introduction
@@ -28,7 +28,7 @@ def colormaps():
 
 def histogram():
     hist = plt.hist(lum_img.ravel(), bins=256, range=(0.0, 1.0), fc='k', ec='k')
-    #imgplot = plt.imshow(hist)
+    imgplot = plt.imshow(hist)
 
 def climExample():
     fig = plt.figure()
@@ -43,9 +43,9 @@ def climExample():
     plt.colorbar(ticks=[0.1, 0.3, 0.5, 0.7], orientation='horizontal')
 
 def resize():
-    img = Image.open('stinkbug.png')
+    img = Image.open('img_stinkbug.png')
     img.thumbnail((64, 64), Image.ANTIALIAS)  # resizes image in-place
     imgplot = plt.imshow(img)
 
-resize()
+histogram()
 plt.show()
