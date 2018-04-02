@@ -1,0 +1,59 @@
+************************************* Invoked: So Apr 1 12:30:57 2018
+[0] Arguments:  D:\180105_crp\crp\opencv\03_haarFacedetection\haartraingui\CascadeTrainerGUI_3.3.1_x64_Setup.exe
+[9] Operations sanity check succeeded.
+[5598] created warning message box OverwriteTargetDirectory: 'Warnung', Sie haben einen existierenden, nicht leeren Ordner für die Installation ausgewählt.\nDieser wird bei der Deinstallation dieser Anwendung komplett gelöscht werden.\nEs wird nicht empfohlen, in diesen Ordner zu installieren.\nMöchten Sie trotzdem fortsetzen?
+[23294] Tmp is on a different volume than the install folder. Tmp volume mount point: "C:\\" Free space available: "12.25 GiB" Install volume mount point: "D:\\" Free space available: "48.55 GiB"
+[23294] Installation space required: "118.73 MiB" Temporary space required: "0.00 Bytes" Local repository size: "0.00 Bytes"
+[23995] backup  operation: Mkdir
+[23995] \t- arguments: D:/180105_crp/crp/opencv/03_haarFacedetection/haartraingui/app
+[23995] Done
+[23995] perform  operation: Mkdir
+[23995] \t- arguments: D:/180105_crp/crp/opencv/03_haarFacedetection/haartraingui/app
+[23995] Done
+[23995] Install size: 1 components
+[24006] backup com.amin.castraingui operation: Extract
+[24006] \t- arguments: installer://com.amin.castraingui/3.3.1content.7z, D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[24006] Done
+[24007] perform com.amin.castraingui operation: Extract
+[24007] \t- arguments: installer://com.amin.castraingui/3.3.1content.7z, D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[26066] Done
+[26066] backup com.amin.castraingui operation: Extract
+[26066] \t- arguments: installer://com.amin.castraingui/3.3.1iconengines.7z, D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[26066] Done
+[26066] perform com.amin.castraingui operation: Extract
+[26066] \t- arguments: installer://com.amin.castraingui/3.3.1iconengines.7z, D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[26074] Done
+[26074] backup com.amin.castraingui operation: Extract
+[26074] \t- arguments: installer://com.amin.castraingui/3.3.1imageformats.7z, D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[26074] Done
+[26075] perform com.amin.castraingui operation: Extract
+[26075] \t- arguments: installer://com.amin.castraingui/3.3.1imageformats.7z, D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[26153] Done
+[26154] backup com.amin.castraingui operation: Extract
+[26154] \t- arguments: installer://com.amin.castraingui/3.3.1platforms.7z, D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[26154] Done
+[26154] perform com.amin.castraingui operation: Extract
+[26154] \t- arguments: installer://com.amin.castraingui/3.3.1platforms.7z, D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[26199] Done
+[26199] backup com.amin.castraingui operation: Extract
+[26199] \t- arguments: installer://com.amin.castraingui/3.3.1translations.7z, D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[26199] Done
+[26199] perform com.amin.castraingui operation: Extract
+[26199] \t- arguments: installer://com.amin.castraingui/3.3.1translations.7z, D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[26240] Done
+[26240] backup com.amin.castraingui operation: CreateShortcut
+[26240] \t- arguments: D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app/Cascade-Trainer-GUI.exe, C:\\Users\\Arun Leander\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Cascade Trainer GUI/Cascade-Trainer-GUI.lnk, workingDirectory=D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[26240] Done
+[26240] perform com.amin.castraingui operation: CreateShortcut
+[26240] \t- arguments: D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app/Cascade-Trainer-GUI.exe, C:\\Users\\Arun Leander\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Cascade Trainer GUI/Cascade-Trainer-GUI.lnk, workingDirectory=D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[26303] Done
+[26303] backup com.amin.castraingui operation: CreateShortcut
+[26303] \t- arguments: D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app/Cascade-Trainer-GUI.exe, C:\\Users\\Arun Leander\\Desktop/Cascade-Trainer-GUI.lnk, workingDirectory=D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[26303] Done
+[26303] perform com.amin.castraingui operation: CreateShortcut
+[26303] \t- arguments: D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app/Cascade-Trainer-GUI.exe, C:\\Users\\Arun Leander\\Desktop/Cascade-Trainer-GUI.lnk, workingDirectory=D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app
+[26335] Done
+[26339] Writing maintenance tool: "D:\\180105_crp\\crp\\opencv\\03_haarFacedetection\\haartraingui\\app/maintenancetool.exe.new"
+[26439] Wrote permissions for maintenance tool.
+[26543] Maintenance tool restart: false.
+[26544] SHOW FINISHED PAGE

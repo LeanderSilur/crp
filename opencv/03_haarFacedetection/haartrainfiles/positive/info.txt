@@ -1,0 +1,8 @@
+rawdata/a1.bmp 1 42 35 228 315
+rawdata/a2.bmp 5 166 139 41 50 228 133 43 51 307 141 44 54 358 121 49 64 254 217 49 69
+rawdata/a3.bmp 1 61 91 198 285
+rawdata/a4.bmp 1 67 81 189 260
+rawdata/a7.bmp 1 86 73 198 280
+rawdata/a8.bmp 1 87 62 196 272
+rawdata/a9.bmp 1 52 76 197 275
+rawdata/a10.bmp 1 54 71 223 267
